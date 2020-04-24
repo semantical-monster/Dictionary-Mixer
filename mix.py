@@ -11,7 +11,6 @@ def mix(c, b):
 		x.append(each.replace(c,b,1))
 		return
 
-
 	if each.count(c) == 2:
 		x.append(each.replace(c,b,1))
 		x.append(each.replace(c,b,2))
@@ -70,7 +69,14 @@ for k, v in mixes.items():
 	for each in set(x):
 		mix(k,v)
 
-#print(set(x))
+
+for set_list in set(x):
+	k = int(1)
+	while k < 1000:
+		x.append(set_list + str(k))
+		k = k + 1
+
+print(set(x))
 print("\nlist size: " + str(len(x)) + "\n")
 
 print(str(len(set(x))) + " unique strings generated from orignal " + str(len(file)) + "\n")
